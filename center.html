@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Center</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        stack-layout {
+            border: 4px solid red;
+        }
+
+        center-layout {
+            border: 4px solid green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>Simplest layout: box > center > stack </h3>
+    <box-layout>
+        <center-layout>
+            <stack-layout>
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, minus dolorem laudantium maiores nam facere beatae.</div>
+
+                <div>Beatae ad tempora reiciendis aliquid fuga et repudiandae ut id incidunt animi deleniti. Vero, ratione.</div>
+            </stack-layout>
+        </center-layout>
+    </box-layout>
+
+    <h3>Complex boxes layout: center > stack > boxes</h3>
+    <center-layout max="40ch">
+        <!-- stacks handle vertical recursion nicely -->
+        <stack-layout recursive="true">
+            <box-layout></box-layout>
+            <box-layout></box-layout>
+            <box-layout>
+                <!-- boxes nest nicely  -->
+                <box-layout></box-layout>
+                <box-layout></box-layout>
+            </box-layout>
+            <box-layout></box-layout>
+        </stack-layout>
+    </center-layout>
+
+    <h3>Simple Page: box > center > stack </h3>
+    <box-layout>
+        <center-layout>
+            <stack-layout>
+                <h2>My page</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illo qui temporibus, accusamus nostrum perspiciatis architecto nihil quisquam quaerat illum, rem assumenda eaque doloribus quod fugit quam modi non unde.
+                </p>
+            </stack-layout>
+        </center-layout>
+    </box-layout>
+
+    <h3>Simple Page: box > stack > center center </h3>
+    <box-layout>
+        <stack-layout>
+            <center-layout>
+                <h2>My page</h2>
+            </center-layout>
+            <center-layout>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illo qui temporibus, accusamus nostrum perspiciatis architecto nihil quisquam quaerat illum, rem assumenda eaque doloribus quod fugit quam modi non unde.
+                </p>
+            </center-layout>
+        </stack-layout>
+    </box-layout>
+
+
+</body>
+
+</html>

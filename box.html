@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Box</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        box-layout {
+            max-inline-size: min-content;
+        }
+
+        box-layout.head {
+            color: red;
+            background-color: black;
+        }
+
+        box-layout.width {
+            min-inline-size: 20ch;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <stack-layout space="1rem">
+        <h2> We present boxes!</h2>
+
+        <box-layout>
+            <box-layout>head</box-layout>
+            <box-layout>body</box-layout>
+        </box-layout>
+
+
+        <box-layout padding="0">
+            <box-layout borderWidth="1px">head</box-layout>
+            <box-layout borderWidth="1px">body</box-layout>
+        </box-layout>
+
+        <box-layout padding="0">
+            <box-layout borderWidth="0" invert="true">head</box-layout>
+            <box-layout borderWidth="0">body</box-layout>
+        </box-layout>
+
+
+        <box-layout padding="0">
+            <box-layout borderWidth="0" class="head width text-align:center">Head</box-layout>
+            <box-layout borderWidth="0" class="width">
+                <!-- 123456789 123456789 1234567890 -->
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aut veniam ullam neque expedita ut nihil molestias laborum. Dolorum quod autem ipsum repellat id nulla quis perferendis enim doloribus neque?
+            </box-layout>
+        </box-layout>
+
+    </stack-layout>
+
+</body>
+
+</html>
+
+
+
+<!--
+
+<script type="module">
+  import '../layouts.js'
+</script>
+
+<stack-layout space="1.5rem">
+    <h2> We present boxes!</h2>
+    <box-layout>
+        <p>This is a paragraph box!</p>
+    </box-layout>
+    <box-layout>
+        This is a text box!
+    </box-layout>
+</stack-layout>
+
+        <box-layout padding="0">
+            <stack-layout space="0">
+                <box-layout>head</box-layout>
+                <box-layout>body</box-layout>
+            </stack-layout>
+        </box-layout>
+
+-->

@@ -1,0 +1,87 @@
+/* from https://every-layout.dev/; */
+
+:root {
+    --ratio: 1.5;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+
+    --measure: 60ch;
+
+    --font-size-small: 0.5rem;
+    --font-size-smallish: 0.75rem;
+    --font-size-base: 1rem;
+    --font-size-biggish: 1.75rem;
+    --font-size-big: 2.25rem;
+
+    --border-thin: 2px;
+
+    --color-dark: black;
+    --color-light: white;
+    /* --color-light: #eee;
+    --color-dark: #222; */
+
+    --item-width: auto; /* flex */
+}
+
+* {
+    font-family: sans-serif;
+    max-inline-size: var(--measure);
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+    max-inline-size: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+figcaption {
+    max-inline-size: var(--measure);
+}
+
+/* utilities */
+.font-size\:small {
+    font-size: var(--font-size-small) !important;
+}
+.font-size\:smallish {
+    font-size: var(--font-size-smallish) !important;
+}
+.font-size\:base {
+    font-size: var(--font-size-base) !important;
+}
+.font-size\:biggish {
+    font-size: var(--font-size-biggish) !important;
+}
+.font-size\:big {
+    font-size: var(--font-size-big) !important;
+}
+.text-align\:center {
+    text-align: center;
+}
+.max-inline-size\:measure {
+    max-inline-size: var(--measure);
+}
+.max-inline-size\:measure\/2 {
+    max-inline-size: calc(var(--measure) / 2);
+}

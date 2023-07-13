@@ -1,12 +1,12 @@
 {
-  "name": "layouts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "layouts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "git add --all && git status;"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
