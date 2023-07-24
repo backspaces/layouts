@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SideBar</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        .wide {
+            min-inline-size: 25ch;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Stack around everything!</h3>
+    <stack-layout>
+        <h3>form > sidebar > text & button</h3>
+        <form>
+            <sidebar-layout side="right" space="0" contentMin="66.666%">
+                <input type="text">
+                <button>Search</button>
+            </sidebar-layout>
+        </form>
+
+        <h3>sidebar > box center, h2 | & box stack p & p</h3>
+        <sidebar-layout side="left" sideWidth="20ch" space="1ch">
+            <box-layout>
+                <center-layout andText="true">
+                    <h2>Side</h2>
+                    <!-- <img src="../data/redfish.png" /> -->
+                </center-layout>
+            </box-layout>
+
+            <box-layout>
+                <stack-layout>
+                    <!-- <center-layout max="1000ch"> -->
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptatem optio quod quam beatae. Placeat porro sunt fuga inventore deleniti ipsa, corporis eligendi quam nesciunt odio beatae reprehenderit quo modi!
+                        Lorem ipsum dolor sit amet consectetur
+                    </p>
+                    <p>
+                        Adipisicing elit. Culpa voluptatem optio quod quam beatae. Placeat porro sunt fuga inventore deleniti ipsa, corporis eligendi quam nesciunt odio beatae reprehenderit quo modi!
+                    </p>
+                    <!-- </center-layout> -->
+                </stack-layout>
+            </box-layout>
+        </sidebar-layout>
+
+        <h3>sidebar > box (h3 & p) & box </h3>
+        <sidebar-layout space="1ch" side="left" sideWidth="20ch">
+            <box-layout class="wide">
+                <!-- <img src="../data/redfish.png" /> -->
+                <h3>Side</h3>
+                <p>Some text</p>
+                <p>Non explicabo nostrum in unde totam labore ipsa! Iste tempore accusamus culpa obcaecati commodi.</p>
+            </box-layout>
+            <box-layout>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio similique in nisi dolor et. Accusantium sequi vel nostrum praesentium nihil doloribus iure! Hic, quod. Sit numquam maxime qui ratione est?
+            </box-layout>
+        </sidebar-layout>
+
+        <h3>sidebar right (img & p)</h3>
+        <sidebar-layout space="4ch" sideWidth="40ch" side="right" contentMin="25%">
+            <img src="https://unsplash.it/640/480?random" />
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio similique in nisi dolor et. Accusantium sequi vel nostrum praesentium nihil doloribus iure! Hic, quod. Sit numquam maxime qui ratione est?
+            </p>
+        </sidebar-layout>
+
+
+    </stack-layout>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!--
+        <sidebar-layout space="var(--s0)" side="left" sideWidth="30ch">
+            <box-layout>
+                <img src="../data/redfish.png" />
+            </box-layout>
+            <box-layout>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio similique in nisi dolor et. Accusantium sequi vel nostrum praesentium nihil doloribus iure! Hic, quod. Sit numquam maxime qui ratione est?
+            </box-layout>
+        </sidebar-layout>
+
+
+        p {
+        /* width: var(--measure); */
+        /* max-inline-size: var(--measure); */
+        }
+
+        /* box-layout {
+        /* max-inline-size: calc(var(--measure) * 2); */
+        /* max-inline-size: min-content; */
+        /* max-inline-size: fit-content(60em); */
+        } */
+
+    -->

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cluster</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        p {
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>stack wrapper</h3>
+
+    <stack-layout space="1ch">
+        <h3>cluster > 4 p's</h3>
+        <cluster-layout>
+            <p>Item</p>
+            <p>Item</p>
+            <p>Item</p>
+            <p>Item</p>
+        </cluster-layout>
+
+        <h3>cluster > 6 box's</h3>
+        <cluster-layout>
+            <box-layout padding="0.5rem">One</box-layout>
+            <box-layout padding="0.5rem">Two</box-layout>
+            <box-layout padding="0.5rem">Three</box-layout>
+            <box-layout padding="0.5rem">One</box-layout>
+            <box-layout padding="0.5rem">Two</box-layout>
+            <box-layout padding="0.5rem">Three</box-layout>
+            <box-layout padding="0.5rem">One</box-layout>
+            <box-layout padding="0.5rem">Two</box-layout>
+            <box-layout padding="0.5rem">Three</box-layout>
+        </cluster-layout>
+
+        <h3>box > cluster > box & cluster< of 6 a's /h3>
+                <box-layout padding="1ch">
+                    <cluster-layout justify="space-between" align="center">
+                        <box-layout padding="1ch">My Website</box-layout>
+                        <cluster-layout justify="flex-start">
+                            <a href="#">Item</a>
+                            <a href="#">Item</a>
+                            <a href="#">Item</a>
+                            <a href="#">Item</a>
+                            <a href="#">Item</a>
+                            <a href="#">Item</a>
+                        </cluster-layout>
+                    </cluster-layout>
+                </box-layout>
+
+    </stack-layout>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+
+    <box-layout>
+        <center-layout>
+            <stack-layout>
+            <h2>My page</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illo qui temporibus, accusamus nostrum perspiciatis architecto nihil quisquam quaerat illum, rem assumenda eaque doloribus quod fugit quam modi non unde.
+            </p>
+            </stack-layout>
+        <center-layout>
+    </box-layout>
+
+    <cluster-layout>
+        <div>
+            <p>Item</p>
+        </div>
+        <div>
+            <p>Item</p>
+        </div>
+        <div>
+            <p>Item</p>
+        </div>
+        <div>
+            <p>Item</p>
+        </div>
+    </cluster-layout>
+-->
+
+<!-- max-inline-size: min-content; -->
+<!-- <box-layout> -->
+<!-- <cluster-layout> -->
+<!-- <box-layout padding="var(--s0)">One</box-layout> -->
+<!-- </cluster-layout> -->

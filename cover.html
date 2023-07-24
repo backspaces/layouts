@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Cover</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        cover-layout {
+            border: 2px solid red;
+        }
+
+        cluster-layout {
+            border: 2px solid black;
+        }
+
+        h1 {
+            border: 2px solid green;
+        }
+
+        div p {
+            border: 2px solid blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <cover-layout>
+        <cluster-layout justify="space-between" align="center">
+            <box-layout>X</box-layout>
+            <cluster-layout>
+                <div><a href="#">About</a></div>
+                <div><a href="#">Blog</a></div>
+                <div><a href="#">Shop</a></div>
+                <div><a href="#">News</a></div>
+                <div><a href="#">Contact</a></div>
+            </cluster-layout>
+        </cluster-layout>
+
+        <h1 class="text-align:center">Welcome To My Site, Visitor!</h1>
+
+        <div class="font-size:smallish text-align:center">
+            <p>What I do. <span>⬇</span></p>
+        </div>
+    </cover-layout>
+
+</body>
+
+</html>
+
+
+
+
+<!-- <style>
+        /* box-layout {
+                max-inline-size: min-content;
+            } */
+    </style> -->
+
+
+<!-- <center-layout andText="true"> -->
+<!-- <h1>Welcome To My Site, Visitor!</h1> -->
+<!-- </center-layout>
+
+
+
+-->

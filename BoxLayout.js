@@ -7,6 +7,7 @@ customElements.define(
         }
 
         render() {
+            // prettier-ignore
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
@@ -18,11 +19,12 @@ customElements.define(
                     }
 
                     ::slotted(*) {
-                        color: inherit;
+                        background-color: inherit;
                     }
                 </style>
                 <slot></slot>
             `
+            console.log('box:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {
@@ -36,7 +38,7 @@ customElements.define(
             return ['padding', 'borderWidth']
         }
         get padding() {
-            return this.getAttribute('padding') || '1rem'
+            return this.getAttribute('padding') || 'var(--s1)'
         }
         set padding(val) {
             return this.setAttribute('padding', val)
@@ -44,7 +46,6 @@ customElements.define(
         get borderWidth() {
             return this.getAttribute('borderWidth') || 'var(--border-thin)'
         }
-
         set borderWidth(val) {
             return this.setAttribute('borderWidth', val)
         }

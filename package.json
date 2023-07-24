@@ -4,9 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "git add --all && git status;"
+        "build": "git add --all && git status",
+        "commit": "git commit --verbose && git push origin main"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "http-server": "^14.1.1"
+    }
 }

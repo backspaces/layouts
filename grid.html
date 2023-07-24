@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Grid</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        /* box-layout {
+            max-inline-size: min-content;
+        } */
+        grid-layout {
+            /* min-inline-size: min-content; */
+            max-inline-size: 80ch;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <grid-layout min="calc(var(--measure) / 4)" space="2ch"> -->
+    <!-- <grid-layout min="calc( (var(--measure) - 3ch ) / 3)" space="2ch"> -->
+    <grid-layout min="calc( (var(--measure) / 3) )">
+        <box-layout>
+            <stack-layout>
+                <!-- card content -->
+                <box-layout class="text-align:center">
+                    <h2>One</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <box-layout>
+            <stack-layout>
+                <box-layout class="text-align:center">
+                    <h2>Two</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <box-layout>
+            <stack-layout>
+                <box-layout class="text-align:center">
+                    <h2>Three</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <box-layout>
+            <stack-layout>
+                <box-layout class="text-align:center">
+                    <h2>Four</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <box-layout>
+            <stack-layout>
+                <box-layout class="text-align:center">
+                    <h2>Five</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <box-layout>
+            <stack-layout>
+                <box-layout class="text-align:center">
+                    <h2>Six</h2>
+                </box-layout>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                <p>Ipsam, itaque pariatur perferendis provident blanditiis veniam molestiae natus optio doloribus id inventore adipisci at laborum debitis neque reiciendis est illum repudiandae!</p>
+            </stack-layout>
+        </box-layout>
+        <!-- etc -->
+    </grid-layout>
+
+
+</body>
+
+</html>

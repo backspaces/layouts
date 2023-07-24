@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Switcher</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        box-layout {
+            /* will make the box text centered, due to padding */
+            max-inline-size: min-content;
+        }
+
+        p {
+            /* will make the p text centered, due to padding */
+            max-inline-size: min-content;
+            border: 4px solid black;
+            padding: 2ch;
+        }
+    </style>
+</head>
+
+<body>
+    <hr />
+    <switcher-layout space="10ch">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        <p>Four</p>
+    </switcher-layout>
+
+    <hr />
+    <switcher-layout space="2ch" limit="10">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        <p>Four</p>
+        <p>Five</p>
+    </switcher-layout>
+
+    <hr />
+    <switcher-layout>
+        <box-layout>One</box-layout>
+        <box-layout>Two</box-layout>
+        <box-layout>Three</box-layout>
+        <box-layout>Four</box-layout>
+    </switcher-layout>
+
+    <hr />
+    <switcher-layout limit="3">
+        <box-layout>One</box-layout>
+        <box-layout>Two</box-layout>
+        <box-layout>Three</box-layout>
+        <box-layout>Four</box-layout>
+        <box-layout>Five</box-layout>
+        <box-layout>Six</box-layout>
+    </switcher-layout>
+</body>
+
+</html>
+
+
+<!--
+
+    Doesn't work: treats the center as a sinle object
+    <switcher-layout>
+        <center-layout>
+            <box-layout>One</box-layout>
+            <box-layout>Two</box-layout>
+            <box-layout>Three</box-layout>
+            <box-layout>Four</box-layout>
+        </center-layout>
+    </switcher-layout>
+
+    Demo
+    <switcher-layout threshold="30rem" space="1rem" data-i="Switcher-30rem1rem5">
+        <box-layout border="" data-i="Box-var(--s1)var(--border-thin)false"></box-layout>
+        <box-layout border="" data-i="Box-var(--s1)var(--border-thin)false"></box-layout>
+        <box-layout border="" data-i="Box-var(--s1)var(--border-thin)false"></box-layout>
+    </switcher-layout>
+
+-->

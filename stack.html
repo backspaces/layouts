@@ -29,13 +29,18 @@
         <div>And I'm a div with text</div>
     </stack-layout>
 
-    <stack-layout space="2rem">
+    <stack-layout space="3rem">
         <h3>Hi Again</h3>
         <p>I'm still a paragraph</p>
         <div>And I'm still a div with text</div>
     </stack-layout>
 
-    <h2>Recursion</h2>
+    <h2> Only child</h2>
+    <stack-layout>
+        <h3>Only child</h3>
+    </stack-layout>
+
+    <!-- <h2>Recursion</h2>
     <stack-layout recursive>
         <p> first level child </p>
         <p> first level sibling </p>
@@ -43,10 +48,10 @@
             <p> second level child </p>
             <p> second level sibling </p>
         </div>
-    </stack-layout>
+    </stack-layout> -->
 
     <h2>Nesting</h2>
-    <stack-layout recursive="true" space="1rem">
+    <stack-layout space="1rem">
         <p> first level child </p>
         <p> first level sibling </p>
         <stack-layout>
@@ -57,33 +62,26 @@
 
     <h2> Two stacks inside another, different space size </h2>
     <stack-layout space="3rem">
-        <h2>Stack 1</h2>
         <stack-layout space="1.5rem">
             <p>Paragraph </p>
             <p>Paragraph </p>
         </stack-layout>
-        <h2>Stack 2</h2>
         <stack-layout space="1.5rem">
             <p>Paragraph </p>
             <p>Paragraph </p>
         </stack-layout>
     </stack-layout>
 
-    <h2> Two Stacks, first recursive & default space, second 2rem space</h2>
-    <stack-layout recursive>
+    <h2> Two nested Stacks, first default space, second different space</h2>
+    <stack-layout>
         <h3>Hello World</h3>
         <p>I'm a paragraph</p>
         <div>And I'm a div with text</div>
-        <stack-layout>
-            <h3>Hello recursive</h3>
-            <p>I'm a recursive paragraph</p>
-            <div>And I'm a recursive div with text</div>
+        <stack-layout space="3rem">
+            <h3>Hello nested</h3>
+            <p>I'm a nested paragraph</p>
+            <div>And I'm a nested div with text</div>
         </stack-layout>
-    </stack-layout>
-    <stack-layout space="2rem">
-        <h3>Hi Again</h3>
-        <p>I'm still a paragraph</p>
-        <div>And I'm still a div with text</div>
     </stack-layout>
 
     <h2> Split after 3 </h2>
@@ -95,20 +93,6 @@
         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
     </stack-layout>
-
-
-    <!-- <h2> A Center, with a stack of boxes, some nested.</h2>
-    <center-l max="40ch">
-        <stack-layout recursive="true">
-            <box-l></box-l>
-            <box-l></box-l>
-            <box-l>
-                <box-l></box-l>
-                <box-l></box-l>
-            </box-l>
-            <box-l></box-l>
-        </stack-layout>
-    </center-l> -->
 
 
 </html>

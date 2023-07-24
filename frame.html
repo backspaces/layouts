@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Frame</title>
+    <link rel="stylesheet" type="text/css" href="./root.css">
+    <script type="module" src="./layouts.js"></script>
+
+    <style>
+        frame-layout {
+            border: 4px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>Simple frame</h3>
+    <frame-layout ratio="4:3">
+        <img src="https://picsum.photos/640/480?random=1" alt="description of the image here" />
+    </frame-layout>
+
+    <h3>Boxed frame</h3>
+
+    <grid-layout space="var(--s1)">
+        <box-layout padding="0">
+            <frame-layout ratio="16:9">
+                <img src="https://picsum.photos/640/480?random=2" alt="A random image from unsplash">
+            </frame-layout>
+            <box-layout borderwidth="0">
+                <stack-layout>
+                    <h4>Luctus At In</h4>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sapiente a, ratione impedit debitis cumque itaque. Minima pariatur quaerat possimus illo quos in numquam, ad distinctio, ea tempore sunt adipisci!
+                    </div>
+                </stack-layout>
+            </box-layout>
+        </box-layout>
+
+        <box-layout padding="0">
+            <frame-layout ratio="16:9">
+                <img src="https://picsum.photos/640/480?random=3" alt="Another random image from unsplash">
+            </frame-layout>
+            <box-layout borderwidth="0">
+                <stack-layout>
+                    <h4>Cubilia Iaculis Ante</h4>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dignissimos delectus eaque laborum quod deleniti, illum dolores fugiat. At quia dolores harum ratione praesentium delectus alias sint unde tenetur voluptatibus!
+                    </div>
+                </stack-layout>
+            </box-layout>
+        </box-layout>
+
+        <box-layout padding="0">
+            <frame-layout ratio="16:9">
+                <img src="https://picsum.photos/640/480?random=4" alt="Another random image from unsplash">
+            </frame-layout>
+            <box-layout borderwidth="0">
+                <stack-layout>
+                    <h4>Nullam Ac Fusce</h4>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non accusantium cupiditate reprehenderit ipsam ullam, aliquid ipsa earum, optio, aut est quae esse vel blanditiis! Voluptate voluptatum laborum deleniti quia dolorum.
+                    </div>
+                </stack-layout>
+            </box-layout>
+        </box-layout>
+    </grid-layout>
+
+
+</body>
+
+</html>
+
+
+
+
+<!--
+
+
+ -->

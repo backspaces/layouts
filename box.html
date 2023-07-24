@@ -26,26 +26,30 @@
 
 <body>
 
-    <stack-layout space="1rem">
-        <h2> We present boxes!</h2>
 
+    <h3>A stack wrapping sever box demos</h3>
+    <stack-layout space="1rem">
+        <h3>Two boxes nested within another</h3>
         <box-layout>
             <box-layout>head</box-layout>
             <box-layout>body</box-layout>
         </box-layout>
 
-
-        <box-layout padding="0">
-            <box-layout borderWidth="1px">head</box-layout>
-            <box-layout borderWidth="1px">body</box-layout>
+        <h3>Two boxes nested in a stack within another box</h3>
+        <box-layout>
+            <stack-layout>
+                <box-layout>head</box-layout>
+                <box-layout>body</box-layout>
+            </stack-layout>
         </box-layout>
 
+        <h3>Two boxes w/ no border nested in a another 0 padding</h3>
         <box-layout padding="0">
-            <box-layout borderWidth="0" invert="true">head</box-layout>
+            <box-layout borderWidth="0">head</box-layout>
             <box-layout borderWidth="0">body</box-layout>
         </box-layout>
 
-
+        <h3>The above with styling to create a card</h3>
         <box-layout padding="0">
             <box-layout borderWidth="0" class="head width text-align:center">Head</box-layout>
             <box-layout borderWidth="0" class="width">

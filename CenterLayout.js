@@ -7,38 +7,35 @@ customElements.define(
         }
 
         render() {
+            // prettier-ignore
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
-                        display: block;
+                        ${ this.intrinsic ? `
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;`  : `display: block;`
+                        }
+
                         box-sizing: content-box;
                         margin-inline: auto;
                         max-inline-size: var(--measure);
+
+                        max-width: ${this.max};
+
+                        ${ this.gutters ? `
+                        padding-inline-start: ${this.gutters};
+                        padding-inline-end: ${this.gutters};` : ''
+                        }
+
+                        ${this.andText ? `text-align: center;` : ''}
                     }
 
-                    ::slotted(*) {
-                        max-width: ${this.max};
-                        ${
-                            this.gutters
-                                ? `
-                        padding-inline-start: ${this.gutters};
-                        padding-inline-end: ${this.gutters};`
-                                : ''
-                        }
-                        ${this.andText ? `text-align: center;` : ''}
-                        ${
-                            this.intrinsic
-                                ? `
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;`
-                                : ''
-                        }
-                    }
+
                 </style>
                 <slot></slot>
             `
-            console.log(this.shadowRoot.innerHTML)
+            console.log('center', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {
@@ -85,3 +82,26 @@ customElements.define(
         }
     }
 )
+
+/*
+
+                    ::slotted(*) {
+                        max-width: ${this.max};
+                        ${
+                            this.gutters
+                                ? `
+                        padding-inline-start: ${this.gutters};
+                        padding-inline-end: ${this.gutters};`
+                                : ''
+                        }
+                        ${this.andText ? `text-align: center;` : ''}
+                        ${
+                            this.intrinsic
+                                ? `
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;`
+                                : ''
+                        }
+
+*/

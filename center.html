@@ -14,6 +14,10 @@
         center-layout {
             border: 4px solid green;
         }
+
+        box-layout {
+            border: 4px solid gray;
+        }
     </style>
 
 </head>
@@ -33,14 +37,17 @@
 
     <h3>Complex boxes layout: center > stack > boxes</h3>
     <center-layout max="40ch">
-        <!-- stacks handle vertical recursion nicely -->
+        <!-- stacks handle vertical recursion nicely but alas, recursive fails-->
         <stack-layout recursive="true">
             <box-layout></box-layout>
             <box-layout></box-layout>
             <box-layout>
-                <!-- boxes nest nicely  -->
-                <box-layout></box-layout>
-                <box-layout></box-layout>
+                <stack-layout>
+                    <!-- boxes nest nicely  -->
+                    <box-layout></box-layout>
+                    <box-layout></box-layout>
+                </stack-layout>
+
             </box-layout>
             <box-layout></box-layout>
         </stack-layout>

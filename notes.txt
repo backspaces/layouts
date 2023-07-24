@@ -1,0 +1,40 @@
+--------------------------------------
+
+New layout:
+- cp an existing layout to FooLayout.js
+    cp StackLayout.js FooLayout.js
+    foo.html: either make one out of every-layout or edit an existing:
+        cp ../htmlcss/every-layout3/n-Foo/foo.html .
+    edit foo.html
+        <title>Foo</title>
+        <link rel="stylesheet" type="text/css" href="./root.css">
+        <script type="module" src="./layouts.js"></script>
+    &
+        -l => -layout
+
+- Find the every-layout dir for that layout inside every-layout3
+    - copy FooLayout's css from layouts.css
+    - copy FooLayout's JS variables to new Foo.js file
+
+- Go to https://every-layout.dev/layouts/
+    - copy the rest of the css into Foo.js
+
+
+
+
+
+Logical properties: Writing mode and direction
+- margin-block is shorthand for margin-block-start and margin-block-end
+    - writing mode horiz: top & bottom; vert: left/right
+- block-size is horiz/vert size depending on writing mode
+    - writing mode is vertically oriented: width; otherwise height
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values
+- inline-size is like block-size but in the writing direction.
+- margin-inline-start/end ditto
+- max-block-size: maximum size of an element in the direction opposite of the writing direction
+    vertical: width, horizontal: height
+- max-inline-size: The other dimension's maximum length, vert: height, horiz: width
+- min-block-size the min of the above
+
+
+

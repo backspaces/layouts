@@ -7,29 +7,34 @@ customElements.define(
         }
 
         render() {
+            // prettier-ignore
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
                         display: flex;
                         flex-direction: column;
-                        justify-content: flex-start;
+                        justify-content: space-between;
                     }
 
                     ::slotted(*) {
-                        margin-block-start: 0;
+                        margin-block: 0;
                     }
 
                     ::slotted(:not(:first-child)) {
                         margin-block-start: ${this.space};
                     }
 
+                    ::slotted(:only-child) {
+                        block-size: 100%;
+                    }
+
                     ::slotted(:nth-child(${this.splitAfter})) {
                         margin-block-end: auto;
-                        /* fix last child to have no bottom margin */
                     }
                 </style>
                 <slot></slot>
             `
+            console.log('stack:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {
@@ -40,19 +45,13 @@ customElements.define(
         }
 
         static get observedAttributes() {
-            return ['space', 'recursive', 'splitAfter']
+            return ['space', 'splitAfter']
         }
         get space() {
-            return this.getAttribute('space') || '1rem'
+            return this.getAttribute('space') || 'var(--s1);'
         }
         set space(val) {
             return this.setAttribute('space', val)
-        }
-        get recursive() {
-            return this.hasAttribute('recursive')
-        }
-        set recursive(val) {
-            return this.setAttribute(val ? 'recursive' : '')
         }
         get splitAfter() {
             return this.getAttribute('splitAfter') || 1000
@@ -62,3 +61,33 @@ customElements.define(
         }
     }
 )
+
+/*
+
+stack-l {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+stack-l > * + * {
+    margin-block-start: var(--s1);
+}
+
+          [data-id="${id}"] ${this.recursive ? '' : ' > '} * + * {
+            margin-block-start: ${this.space};
+          }
+
+          ${
+              this.splitAfter
+                  ? `
+            [data-id="${id}"] :only-child {
+              block-size: 100%;
+            }
+
+            [data-id="${id}"] > :nth-child(${this.splitAfter}) {
+              margin-block-end: auto;
+            }`
+                  : ''
+          }
+
+*/
