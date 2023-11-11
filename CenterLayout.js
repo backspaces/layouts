@@ -11,21 +11,21 @@ customElements.define(
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
-                        ${ this.intrinsic ? `
+                        ${this.intrinsic ? `
                         display: flex;
                         flex-direction: column;
-                        align-items: center;`  : `display: block;`
+                        align-items: center;` : `display: block;`
                         }
 
                         box-sizing: content-box;
                         margin-inline: auto;
-                        max-inline-size: var(--measure);
+                        /* max-inline-size: var(--measure); */
 
                         max-width: ${this.max};
 
                         ${ this.gutters ? `
                         padding-inline-start: ${this.gutters};
-                        padding-inline-end: ${this.gutters};` : ''
+                        padding-inline-end: ${this.gutters};`  : ''
                         }
 
                         ${this.andText ? `text-align: center;` : ''}
@@ -35,7 +35,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('center', this.shadowRoot.innerHTML)
+            // console.log('center', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

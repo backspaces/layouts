@@ -3,12 +3,15 @@
 
 <head>
     <title>SideBar</title>
-    <link rel="stylesheet" type="text/css" href="./root.css">
     <script type="module" src="./layouts.js"></script>
 
     <style>
         .wide {
             min-inline-size: 25ch;
+        }
+
+        sidebar-layout {
+            border: 1px solid red
         }
     </style>
 </head>
@@ -62,6 +65,14 @@
             </box-layout>
         </sidebar-layout>
 
+        <h3>sidebar (p & img)</h3>
+        <sidebar-layout space="4ch" sideWidth="20ch" contentMin="25%">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio similique in nisi dolor et. Accusantium sequi vel nostrum praesentium nihil doloribus iure! Hic, quod. Sit numquam maxime qui ratione est?
+            </p>
+            <img src="https://unsplash.it/640/480?random" />
+        </sidebar-layout>
+
         <h3>sidebar right (img & p)</h3>
         <sidebar-layout space="4ch" sideWidth="40ch" side="right" contentMin="25%">
             <img src="https://unsplash.it/640/480?random" />
@@ -69,7 +80,6 @@
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio similique in nisi dolor et. Accusantium sequi vel nostrum praesentium nihil doloribus iure! Hic, quod. Sit numquam maxime qui ratione est?
             </p>
         </sidebar-layout>
-
 
     </stack-layout>
 </body>

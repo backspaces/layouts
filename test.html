@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test</title>
+    <style>
+        my-element {
+            width: 50vw;
+            height: 30vh;
+            border: 4px solid green;
+        }
+
+        p {
+            border: 4px solid red;
+            width: 75vw;
+        }
+
+
+        /* Both work */
+
+        /* ::-webkit-scrollbar {
+            block-size: 1rem;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: black
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: red;
+        } */
+
+
+        my-element::-webkit-scrollbar {
+            block-size: 1rem;
+        }
+
+        my-element::-webkit-scrollbar-track {
+            background-color: black
+        }
+
+        my-element::-webkit-scrollbar-thumb {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // console.log('style', document.getElementsByTagName('style')[0])
+    </script>
+    <p class="foo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste esse eum molestias dolore fuga cupiditate! Ducimus est omnis ipsum aperiam, esse beatae dolorum repudiandae veritatis delectus labore dignissimos ratione!
+    </p>
+    <p class="bar">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste esse eum molestias dolore fuga cupiditate! Ducimus est omnis ipsum aperiam, esse beatae dolorum repudiandae veritatis delectus labore dignissimos ratione!
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quis obcaecati fuga nam quae ad dicta numquam ab omnis. Unde ab minima sit vel ipsum doloribus commodi doloremque, aut id.
+    </p>
+
+</body>
+
+</html>

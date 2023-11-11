@@ -6,6 +6,7 @@ customElements.define(
             this.attachShadow({ mode: 'open' })
         }
 
+        // Do not have recursive
         render() {
             // prettier-ignore
             this.shadowRoot.innerHTML = `
@@ -14,6 +15,7 @@ customElements.define(
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        /* max-inline-size: var(--measure); */
                     }
 
                     ::slotted(*) {
@@ -34,7 +36,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('stack:', this.shadowRoot.innerHTML)
+            // console.log('stack:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

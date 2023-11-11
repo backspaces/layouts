@@ -24,7 +24,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('box:', this.shadowRoot.innerHTML)
+            // console.log('box:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

@@ -3,10 +3,13 @@
 
 <head>
     <title>Cluster</title>
-    <link rel="stylesheet" type="text/css" href="./root.css">
     <script type="module" src="./layouts.js"></script>
 
     <style>
+        stack-layout {
+            border: 4px solid red;
+        }
+
         p {
             padding: 2px;
         }
@@ -17,6 +20,7 @@
 
     <h3>stack wrapper</h3>
 
+    <!-- <center-layout> -->
     <stack-layout space="1ch">
         <h3>cluster > 4 p's</h3>
         <cluster-layout>
@@ -26,17 +30,18 @@
             <p>Item</p>
         </cluster-layout>
 
-        <h3>cluster > 6 box's</h3>
+        <h3>cluster > 9 box's</h3>
+
         <cluster-layout>
-            <box-layout padding="0.5rem">One</box-layout>
-            <box-layout padding="0.5rem">Two</box-layout>
-            <box-layout padding="0.5rem">Three</box-layout>
-            <box-layout padding="0.5rem">One</box-layout>
-            <box-layout padding="0.5rem">Two</box-layout>
-            <box-layout padding="0.5rem">Three</box-layout>
-            <box-layout padding="0.5rem">One</box-layout>
-            <box-layout padding="0.5rem">Two</box-layout>
-            <box-layout padding="0.5rem">Three</box-layout>
+            <box-layout padding="1rem">One</box-layout>
+            <box-layout padding="1rem">Two</box-layout>
+            <box-layout padding="1rem">Three</box-layout>
+            <box-layout padding="1rem">One</box-layout>
+            <box-layout padding="1rem">Two</box-layout>
+            <box-layout padding="1rem">Three</box-layout>
+            <box-layout padding="1rem">One</box-layout>
+            <box-layout padding="1rem">Two</box-layout>
+            <box-layout padding="1rem">Three</box-layout>
         </cluster-layout>
 
         <h3>box > cluster > box & cluster< of 6 a's /h3>
@@ -55,6 +60,7 @@
                 </box-layout>
 
     </stack-layout>
+    <!-- </center-layout> -->
 
 </body>
 

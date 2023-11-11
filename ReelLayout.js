@@ -7,18 +7,32 @@ customElements.define(
         }
 
         render() {
+            // Lite Dom used for scrollbars
+            if (!document.getElementById('reel-layout-style')) {
+                const style = document.createElement('style')
+                style.id = 'reel-layout-style'
+                style.innerText = `
+                    reel-layout::-webkit-scrollbar {
+                        block-size: 1rem;
+                    }
+                    reel-layout::-webkit-scrollbar-track {
+                        background-color: black
+                    }
+                    reel-layout::-webkit-scrollbar-thumb {
+                        background-color: red;
+                    }
+                `
+                document.head.appendChild(style)
+            }
+
+            // shadow Dom used for children and thd shadow host
             // prettier-ignore
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
                         display: flex;
-                        overflow: auto scroll;
-                        scrollbar-color: var(--color-light) var(--color-dark);
-
-                        block-size: auto;
-
+                        overflow: auto;
                         height: ${this.height};
-
                     }
 
                     ::slotted(*) {
@@ -26,7 +40,6 @@ customElements.define(
                     }
 
                     ::slotted(img) {
-                        /* flex: 0 0 var(--item-width); */
                         height: 100%;
                         flex-basis: auto;
                         width: auto;
@@ -34,33 +47,32 @@ customElements.define(
 
                     ::slotted(:not(:first-child)) {
                         margin-inline-start: ${this.space};
-                        background-color: red;
+                        /* background-color: red; */
                     }
                 </style>
                 <slot></slot>
             `
-            // ::slotted(overflowing) {
-            //     block-size: 1rem;
-            // }
-
-            console.log('stack:', this.shadowRoot.innerHTML)
+            // console.log('stack:', this.shadowRoot.innerHTML)
         }
 
+        toggleOverflowClass(elem) {
+            elem.classList.toggle(
+                'overflowing',
+                this.scrollWidth > this.clientWidth
+            )
+        }
         connectedCallback() {
             this.render()
-            // this.toggleOverflowClass is undefined
-
-            // if ('ResizeObserver' in window) {
-            //     new ResizeObserver(entries => {
-            //         this.toggleOverflowClass(entries[0].target)
-            //     }).observe(this)
-            // }
-
-            // if ('MutationObserver' in window) {
-            //     new MutationObserver(entries => {
-            //         this.toggleOverflowClass(entries[0].target)
-            //     }).observe(this, { childList: true })
-            // }
+            if ('ResizeObserver' in window) {
+                new ResizeObserver(entries => {
+                    this.toggleOverflowClass(entries[0].target)
+                }).observe(this)
+            }
+            if ('MutationObserver' in window) {
+                new MutationObserver(entries => {
+                    this.toggleOverflowClass(entries[0].target)
+                }).observe(this, { childList: true })
+            }
         }
         attributeChangedCallback() {
             this.render()
@@ -70,7 +82,8 @@ customElements.define(
             return ['itemWidth', 'height', 'space', 'noBar']
         }
         get itemWidth() {
-            return this.getAttribute('itemWidth') || 'auto'
+            return this.getAttribute('itemWidth') || 'var(--item-width)' // 'auto'
+            // flex: 0 0 var(--item-width);
         }
         set itemWidth(val) {
             return this.setAttribute('itemWidth', val)
@@ -106,6 +119,39 @@ customElements.define(
 // ::slotted(:nth-child(n + 2) {
 
 /*
+                    reel-layout::-webkit-scrollbar {
+                        block-size: 1rem;
+                    }
+
+                    reel-layout::-webkit-scrollbar-track {
+                        background-color: black
+                    }
+
+                    reel-layout::-webkit-scrollbar-thumb {
+                        background-color: red;
+                    }
+
+
+
+                    Not supported widely, pseudo elements instead
+                    scrollbar-width: 1rem;
+                    scrollbar-color: black red;
+
+                    scrollbar-color: var(--color-light) var(--color-dark);
+
+                    ::-webkit-scrollbar {
+                        block-size: 1rem;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background-color: black
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        background-color: red;
+                    }
+
+
                     :host::-webkit-scrollbar {
                         block-size: 1rem;
                     };

@@ -32,7 +32,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('stack:', this.shadowRoot.innerHTML)
+            // console.log('stack:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

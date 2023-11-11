@@ -58,7 +58,7 @@ figcaption {
     max-inline-size: var(--measure);
 }
 
-/* utilities */
+/* utility classes */
 .font-size\:small {
     font-size: var(--font-size-small) !important;
 }
@@ -74,12 +74,34 @@ figcaption {
 .font-size\:big {
     font-size: var(--font-size-big) !important;
 }
+
 .text-align\:center {
     text-align: center;
 }
-.max-inline-size\:measure {
+
+.max-width\:measure {
     max-inline-size: var(--measure);
 }
-.max-inline-size\:measure\/2 {
+.max-width\:measure\/2 {
     max-inline-size: calc(var(--measure) / 2);
 }
+.max-width\:content {
+    max-inline-size: min-content;
+}
+
+.min-width\:small {
+    min-inline-size: 20ch;
+}
+.min-width\:medium {
+    min-inline-size: 40ch;
+}
+.min-width\:large {
+    min-inline-size: 60ch;
+}
+.min-width\:contents {
+    min-inline-size: min-content;
+}
+
+/* #cssLoaded {
+    box-sizing: border-box;
+} */

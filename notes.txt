@@ -7,8 +7,7 @@ New layout:
         cp ../htmlcss/every-layout3/n-Foo/foo.html .
     edit foo.html
         <title>Foo</title>
-        <link rel="stylesheet" type="text/css" href="./root.css">
-        <script type="module" src="./layouts.js"></script>
+            <script type="module" src="./layouts.js"></script>
     &
         -l => -layout
 

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test1</title>
+    <style>
+        my-element {
+            /* overrides default */
+            width: 50vw;
+            height: 30vh;
+            border: 4px solid green;
+
+            /* doesn't work
+            ::-webkit-scrollbar {
+                block-size: 1rem;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: black
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: red;
+            } */
+
+        }
+
+        p {
+            border: 4px solid red;
+            width: 75vw;
+        }
+
+        /* Both work, one in my-element, the other everywhere */
+        /* my-element::-webkit-scrollbar {
+            block-size: 1rem;
+        }
+
+        my-element::-webkit-scrollbar-track {
+            background-color: black
+        }
+
+        my-element::-webkit-scrollbar-thumb {
+            background-color: red;
+        } */
+
+        /* ::-webkit-scrollbar {
+            block-size: 1rem;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: black
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <script>
+        customElements.define(
+            'my-element',
+            class extends HTMLElement {
+                connectedCallback() {
+                    this.attachShadow({ mode: 'open' })
+                    this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            overflow: scroll;
+                       }
+                   </style>
+                    <slot></slot>
+                    `
+                    console.log('host', this.shadowRoot.host)
+                }
+            }
+        )
+    </script>
+
+    <my-element>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste esse eum molestias dolore fuga cupiditate! Ducimus est omnis ipsum aperiam, esse beatae dolorum repudiandae veritatis delectus labore dignissimos ratione!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste esse eum molestias dolore fuga cupiditate! Ducimus est omnis ipsum aperiam, esse beatae dolorum repudiandae veritatis delectus labore dignissimos ratione!
+        </p>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae sunt vel dignissimos mollitia explicabo? Praesentium tempore nesciunt possimus non ex. Fugit, distinctio! Animi magni debitis totam est neque quia et?
+        </p>
+    </my-element>
+
+    <script>
+        const typeOf = obj =>
+        ({}.toString
+            .call(obj)
+            .match(/\s(\w+)/)[1]
+            .toLowerCase())
+
+        console.log(document.querySelectorAll('my-element p').length); // 3
+        console.log(document.querySelector('my-element'));
+        const el = document.querySelector('my-element')
+        console.log(el.shadowRoot);
+        console.log(typeOf(el));
+
+    </script>
+
+</body>
+
+</html>
+
+<!--
+                        ::slotted(*) {
+                        }
+
+
+                    // alert(this.innerHTML); // empty (*)
+                    // setTimeout(() => alert(this.innerHTML)); // John (*)
+
+
+                // constructor() {
+                // super()
+                // this.attachShadow({ mode: 'open' })
+                // }
+                // connectedCallback() {
+                // // console.log('connectedCallback');
+                // alert(this.innerHTML)
+                // setTimeout(() => alert(this.innerHTML))
+                // this.shadowRoot.innerHTML = `
+                // <style>
+                    //             :host {
+                    //                 width: 20rem;
+                    //                 height: 20rem;
+                    //             }
+                    //
+                </style>
+                // `
+                // }
+
+
+                    <my-element name="foo" id="mine">
+
+                constructor() {
+                super()
+                // this.attachShadow({ mode: 'open' })
+                }
+
+ -->

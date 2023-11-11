@@ -3,7 +3,6 @@
 
 <head>
     <title>Box</title>
-    <link rel="stylesheet" type="text/css" href="./root.css">
     <script type="module" src="./layouts.js"></script>
 
     <style>
@@ -16,18 +15,15 @@
             background-color: black;
         }
 
-        box-layout.width {
+        /* box-layout.width {
             min-inline-size: 20ch;
-        }
+        } */
     </style>
 
 </head>
 
-
 <body>
-
-
-    <h3>A stack wrapping sever box demos</h3>
+    <h3>A stack wrapping several box demos</h3>
     <stack-layout space="1rem">
         <h3>Two boxes nested within another</h3>
         <box-layout>
@@ -51,15 +47,15 @@
 
         <h3>The above with styling to create a card</h3>
         <box-layout padding="0">
-            <box-layout borderWidth="0" class="head width text-align:center">Head</box-layout>
-            <box-layout borderWidth="0" class="width">
+            <box-layout borderWidth="0" class="head min-width:small text-align:center">
+                Head
+            </box-layout>
+            <box-layout borderWidth="0" class="min-width:small">
                 <!-- 123456789 123456789 1234567890 -->
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aut veniam ullam neque expedita ut nihil molestias laborum. Dolorum quod autem ipsum repellat id nulla quis perferendis enim doloribus neque?
             </box-layout>
         </box-layout>
-
     </stack-layout>
-
 </body>
 
 </html>

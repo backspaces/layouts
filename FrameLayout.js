@@ -33,7 +33,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('frame:', this.shadowRoot.innerHTML)
+            // console.log('frame:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

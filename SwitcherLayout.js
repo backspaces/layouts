@@ -18,19 +18,14 @@ customElements.define(
                     }
 
                     ::slotted(*) {
-                        flex-basis: calc(${this.threshold} - 100%) * 999);
                         flex-grow: 1;
+                        flex-basis: calc(${this.threshold} - 100%) * 999);
                     }
 
-                    ${ this.switchToVertical ? `
-                    ::slotted(*) {
-                          flex-basis: 100%;
-                    }` : ''
-                    }
                 </style>
                 <slot></slot>
             `
-            console.log('switcher:', this.shadowRoot.innerHTML)
+            // console.log('switcher:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {
@@ -44,7 +39,7 @@ customElements.define(
             const limit = parseInt(this.limit)
             const children = this.childElementCount
             const result = limit + 1 < children
-            console.log('switch, limit, children', result, limit, children)
+            // console.log('switch, limit, children', result, limit, children)
             return result
         }
 
@@ -74,6 +69,18 @@ customElements.define(
 
 //   flex-basis: calc(( 30rem - 100%) * 999);
 /*
+                    ::slotted(:nth-last-child(n+ 5)) ,
+                    :nth-last-child(n+ 5) ~ * {
+                        flex-basis: 100%;
+                    }
+
+
+                    ${ this.switchToVertical ? `
+                    ::slotted(*) {
+                          flex-basis: 100%;
+                    }` : ''
+                    }
+
                     ${ this.switchToVertical ? `
                     ::slotted(:nth-child(n + 2) {
                           flex-basis: 100%;

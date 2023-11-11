@@ -34,8 +34,8 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('cover:', this.shadowRoot.innerHTML)
-            console.log('children:', this.childElementCount)
+            // console.log('cover:', this.shadowRoot.innerHTML)
+            // console.log('children:', this.childElementCount)
         }
 
         connectedCallback() {

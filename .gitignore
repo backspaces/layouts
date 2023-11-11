@@ -1,2 +1,6 @@
 # ignore these in the repo
 node_modules/
+notes.txt
+package-lock.json
+test.html
+test1.html

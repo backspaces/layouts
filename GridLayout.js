@@ -20,7 +20,7 @@ customElements.define(
                 </style>
                 <slot></slot>
             `
-            console.log('grid:', this.shadowRoot.innerHTML)
+            // console.log('grid:', this.shadowRoot.innerHTML)
         }
 
         connectedCallback() {

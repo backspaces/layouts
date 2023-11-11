@@ -3,7 +3,6 @@
 
 <head>
     <title>Switcher</title>
-    <link rel="stylesheet" type="text/css" href="./root.css">
     <script type="module" src="./layouts.js"></script>
 
     <style>
@@ -22,6 +21,18 @@
 </head>
 
 <body>
+    <switcher-layout threshold="30rem" space="1rem">
+        <box-layout>box one</box-layout>
+        <box-layout>box two</box-layout>
+        <box-layout>box three</box-layout>
+        <box-layout>box one</box-layout>
+        <box-layout>box two</box-layout>
+        <box-layout>box three</box-layout>
+        <box-layout>box one</box-layout>
+        <box-layout>box two</box-layout>
+        <box-layout>box three</box-layout>
+    </switcher-layout>
+
     <hr />
     <switcher-layout space="10ch">
         <p>One</p>
@@ -37,6 +48,7 @@
         <p>Three</p>
         <p>Four</p>
         <p>Five</p>
+        <p>Six</p>
     </switcher-layout>
 
     <hr />
